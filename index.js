@@ -9,6 +9,9 @@ const automobile = {
   orderCar(starterIndex, mainIndex) {
     return [this.hatchBack[starterIndex], this.suv[mainIndex]];
   },
+  carCategory(cat1, cat2, cat3) {
+    console.log(`The categories are ${cat1} ${cat2} ${cat3}`);
+  },
   openHours: {
     thursday: {
       open: 12,
@@ -47,3 +50,25 @@ const newJoin = [
 ];
 
 console.log(newJoin);
+
+console.log(...automobile.cName, ...automobile.categories);
+
+//Write function that accept multiple arguments then using spread operator to pass those arguments
+
+/* const receivedCat = [
+  prompt('category-1'),
+  prompt('category-2'),
+  prompt('category-3'),
+  prompt('category-3'),
+]; */
+
+//automobile.carCategory(...receivedCat);
+
+// using Spread Operators on Objects
+const newAutos = { founded: 1901, ...automobile, owner: 'Yasir' };
+console.log(newAutos);
+
+//Shallow copy of the objects
+const rehmanAutos = { ...automobile };
+rehmanAutos.cName = 'Toyota';
+console.log(rehmanAutos);
